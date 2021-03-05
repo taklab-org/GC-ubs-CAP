@@ -53,4 +53,3 @@ In `/Demo3` folder, the codes of Section 7 is contained.
 
 
 Copyright (C) 2021 J-P Lessard, K Matsue and A Takayasu.
-# A-geometric-characterization-of-unstable-blow-up-solutions-with-computer-assisted-proof
