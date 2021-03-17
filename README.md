@@ -2,15 +2,15 @@
 
 This repository contains the codes associated with the paper: "A geometric characterization of unstable blow-up solutions with computer-assisted proof" by J-P Lessard, K Matsue and A Takayasu. (arXiv:)
 
-**Abstract** In this paper, blow-up solutions of autonomous ordinary differential equations (ODEs) which are unstable under perturbations of initial conditions are studied. Combining dynamical systems machinery (e.g. phase space compactifications, time-scale desingularizations of vector fields) with tools from computer-assisted proofs (e.g. rigorous integrators, parameterization method for invariant manifolds) these {\em unstable} blow-up solutions are obtained as trajectories on stable manifolds of hyperbolic (saddle) equilibria at infinity. In this process, important features are obtained: smooth dependence of blow-up times on initial conditions near blow-up, level set distribution of blow-up times, singular behavior of blow-up times on unstable blow-up solutions, organizing the phase space via separatrices (stable manifolds). In particular, we show that unstable blow-up solutions and bounded solutions connected by those blow-up solutions can separate initial conditions into two regions where solution trajectories are either globally bounded or blow-up, no matter how the large initial conditions are.
+**Abstract** In this paper, blow-up solutions of autonomous ordinary differential equations (ODEs) which are unstable under perturbations of initial conditions are studied. Combining dynamical systems machinery (e.g. phase space compactifications, time-scale desingularizations of vector fields) with tools from computer-assisted proofs (e.g. rigorous integrators, parameterization method for invariant manifolds) these {\em unstable} blow-up solutions are obtained as trajectories on stable manifolds of hyperbolic (saddle) equilibria at infinity. In this process, important features are obtained: smooth dependence of blow-up times on initial conditions near blow-up, level set distribution of blow-up times, singular behavior of blow-up times on unstable blow-up solutions, organization of the phase space via separatrices (stable manifolds). In particular, we show that unstable blow-up solutions themselves, and solutions defined globally in time connected by those blow-up solutions can separate initial conditions into two regions where solution trajectories are either globally bounded or blow-up, no matter how the large initial conditions are.
 
 These codes require MATLAB with INTLAB - INTerval LABoratory (MATLAB toolbox for interval arithmetic) version 11 and the kv library (a C++ Library for rigorous numerics) version 0.4.48.
 
 ---
 
-## Demonstration 1
+## Example 1
 
-In `/Demo1` folder, the codes of Section 5 is contained.
+In `/Example1` folder, the codes of Section 5 is contained.
 
 - `scrip_prove_manifold.m` provides rigorous enclosure of stable manifold and plots Figure 3.
 - `script_compute_t_max.m` provides the rigorous bound of the blow-up time and plots Figure 4.
@@ -21,9 +21,9 @@ c++ -I../.. -O3 -DNDEBUG -DKV_FASTROUND ex1_integrate_stable_manifold.cc
 - `script_plot3_blowup_times.m` plots Figure 5 and 6. It also provides the data of Table 1.
 
 
-## Demonstration 2
+## Example 2
 
-In `/Demo2` folder, the codes of Section 6 is contained.
+In `/Example2` folder, the codes of Section 6 is contained.
 
 - `script_plot_manifolds.m` plots Figure 7.
 - `script_get_distribution_of_blowup_time.m` plots Figure 8.
@@ -33,9 +33,9 @@ c++ -I../.. -O3 -DNDEBUG -DKV_FASTROUND ex2_integrate_backward_from_p0.cc
 ```
 - `script_2d_stable_global_ex2.m` plots Figure 9.
 
-## Demonstration 3
+## Example 3
 
-In `/Demo3` folder, the codes of Section 7 is contained.
+In `/Example3` folder, the codes of Section 7 is contained.
 
 - `scrip_prove_manifold.m` provides rigorous enclosure of 1D stable manifolds (attached to p_0 and p_{infty,s} equilibria) and plots Figure 11.
 - `script_plot_fig12.m` plots Figure 12.
