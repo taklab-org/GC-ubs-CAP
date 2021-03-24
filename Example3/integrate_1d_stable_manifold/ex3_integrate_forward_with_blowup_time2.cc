@@ -30,7 +30,7 @@ const int gamm = 2; // c = alpha_1*beta_1 = ... = alpha_n*beta_n: fixed
 
 namespace ub = boost::numeric::ublas;
 typedef kv::interval<double> intval;
-// FILE* fp;
+FILE* fp;
 
 ub::matrix< intval > Y;
 ub::vector< intval > pb;
@@ -278,21 +278,21 @@ int main()
 
 
     // 3. Validate that x(tau_N) is in the Lyapunov domain
-    double p_step = 5e-4, param = p_step;
+    double p_step = 1e-12, param = 1e-8;
     p_func px4;
-    // int count = 0;
-    // fp = fopen("data.bin.bak", "wb"); // file output
+    int count = 0;
+    fp = fopen("data_more.bin", "wb"); // file output
     double data_out;
     while (true) {
         t_n  = 0; // Initialize the blow-up time
         x0 = ps + param*v_normal;
-        if (px4(x0)>1) break;
+        if (px4(x0)>1 || param <= 1e-12) break;
         //---- just for figures ---
         data_out = param;
-        // fwrite(&data_out, sizeof(double), 1, fp);
+        fwrite(&data_out, sizeof(double), 1, fp);
         //-----------
-        param += p_step;
-        // count++;
+        param -= p_step;
+        count++;
         // std::cout << "count: " << count << '\n';
         x = x0;
         start = 0;
@@ -349,11 +349,11 @@ int main()
         //--------------------------------------------------------------------------
         std::cout << "Tmax: " << Tmax << std::endl;
         //---- just for figures ---
-        // data_out = mid(Tmax);
-        // fwrite(&data_out, sizeof(double), 1, fp);
-        // data_out = rad(Tmax);
-        // fwrite(&data_out, sizeof(double), 1, fp);
+        data_out = mid(Tmax);
+        fwrite(&data_out, sizeof(double), 1, fp);
+        data_out = rad(Tmax);
+        fwrite(&data_out, sizeof(double), 1, fp);
         //-----------
     }
-    // fclose(fp);
+    fclose(fp);
 }

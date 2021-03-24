@@ -1,9 +1,13 @@
 % function plot_blowup_times(tmax)
-clf
+% clf
+clear
+% fileID = fopen('data_more.bin');
 fileID = fopen('data.bin');
 A = fread(fileID,'double');
 fclose(fileID);
-xy = reshape(A,2,length(A)/2);
+% xy = reshape(A,2,length(A)/2);
+data_clumn = 3;
+xy = reshape(A,data_clumn,length(A)/data_clumn);
 
 plot(xy(1,:),xy(2,:),'o','MarkerSize',6,...
     'MarkerEdgeColor','blue',...
@@ -22,3 +26,6 @@ ylabel('Blow-up time','FontSize', 20)
 %     'MarkerFaceColor',[1 .6 .6])
 % hold off
 % % 3.0845
+% 2.3235e-11
+% 3.7235e-05
+% 1.8288e-02

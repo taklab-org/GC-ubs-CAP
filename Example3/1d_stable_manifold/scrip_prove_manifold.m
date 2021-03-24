@@ -1,4 +1,4 @@
-% close all
+close all
 clear
 figure 
 hold on
@@ -57,9 +57,9 @@ a = [a1;a2];
 
 t_max = rigorous_computation_tmax_ex2(a,lambda,r0,1);
 
-disp(['||P(theta) - P^(N)(theta)|| < = r_min = ',num2str(I(1))])
+% disp(['||P(theta) - P^(N)(theta)|| < = r_min = ',num2str(I(1))])
 
 
 %
 figure
-plot_blowup_times(t_max(end-2)) % Plot Figure 13(a)
+plot_blowup_times(t_max(end-1)) % Plot Figure 13(a)
